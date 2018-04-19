@@ -1,0 +1,80 @@
+a {
+  color: $pink;
+  &:hover {
+    color: lighten($pink, 5%);
+  }
+}
+
+.btn {
+  height: 55px;
+  padding-top: 0;
+  padding-left: $standard-gap;
+  padding-bottom: 0;
+  padding-right: $standard-gap;
+  font-family: $button-font;
+  text-transform: uppercase;
+  line-height: 54px;
+  border-radius: 27px;
+  border: 0;
+
+  @media (max-width: 499px) {
+    width: 100%;
+  }
+
+  &.btn-green {
+    color: white;
+    background-color: $green;
+    background: -moz-linear-gradient(top, lighten($green, 5%) 0%, $green 10%, darken($green, 15%) 100%);
+    background: -webkit-linear-gradient(top, lighten($green, 5%) 0%, $green 10%, darken($green, 15%) 100%);
+    background: linear-gradient(to bottom, lighten($green, 5%) 0%, $green 10%, darken($green, 15%) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$green', endColorstr='darken($green, 15%)',GradientType=0 );
+    box-shadow: 0 20px 30px -20px rgba(0,0,0,0.5);
+    transition: box-shadow 0.2s;
+
+    &:hover {
+      background-color: lighten($green, 5%);
+      background: -moz-linear-gradient(top, lighten($green, 7%) 0%, lighten($green, 2%) 10%, darken($green, 12%) 100%);
+      background: -webkit-linear-gradient(top, lighten($green, 7%) 0%, lighten($green, 2%) 10%, darken($green, 12%) 100%);
+      background: linear-gradient(to bottom, lighten($green, 7%) 0%, lighten($green, 2%) 10%, darken($green, 12%) 100%);
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='lighten($green, 2%)', endColorstr='darken($green, 12%)',GradientType=0 );
+      box-shadow: 0 20px 30px -10px rgba(0,0,0,0.3);
+    }
+  }
+
+  &.btn-outline {
+    color: $pink;
+    border: 2px solid;
+    border-color: rgba(red($pink), green($pink), blue($pink), 1);
+    transition: border-color 0.2s;
+
+    &:hover {
+      border-color: rgba(red($pink), green($pink), blue($pink), 0.4);
+    }
+  }
+}
+
+.btn-collection {
+  margin-top: $standard-gap;
+  margin-bottom: $standard-gap;
+
+  .btn {
+    margin-left: #{$standard-gap / 2};
+    margin-right: #{$standard-gap / 2};
+
+    &:first-of-type {
+      margin-left: 0;
+    }
+
+    &:last-of-type {
+      margin-right: 0;
+    }
+  }
+
+  @media (max-width: 499px) {
+    .btn {
+      margin-left: 0 !important;
+      margin-right: 0 !important;
+      margin-bottom: $standard-gap;
+    }
+  }
+}
